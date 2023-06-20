@@ -27,11 +27,11 @@ exports.config = {
         // './test/specs/**/*.js'
         // './test/specs/**/home.js'
         // './test/specs/**/nav.js'
-        // './test/specs/**/contact.js'
+        './test/specs/**/contact.js'
         // './test/specs/**/blog.js'
         // './test/specs/**/homeTest2.js'
         // './test/specs/**/upload.js'
-        './test/specs/**/iframe.js'
+        // './test/specs/**/iframe.js'
     ],
     // Patterns to exclude.
     exclude: [

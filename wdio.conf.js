@@ -24,10 +24,10 @@ exports.config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        // './test/specs/**/*.js'
+        './test/specs/**/*.js'
         // './test/specs/**/home.js'
         // './test/specs/**/nav.js'
-        './test/specs/**/contact.js'
+        // './test/specs/**/contact.js'
         // './test/specs/**/blog.js'
         // './test/specs/**/homeTest2.js'
         // './test/specs/**/upload.js'
@@ -36,7 +36,21 @@ exports.config = {
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
+        './test/specs/**/homeTest2.js'
     ],
+    // Define Suites to run multiple tests
+    suites: {
+        smoke: [
+            './test/specs/**/home.js',
+            './test/specs/**/blog.js',
+            './test/specs/**/contact.js'
+            
+        ],
+        component: [
+            './test/specs/**/nav.js'
+
+        ]
+    },
     //
     // ============
     // Capabilities
@@ -60,9 +74,22 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
+        // For running 5 files execution at the same time
+        // maxInstances: 5,
         // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
-    }],
+        browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
+        // acceptInsecureCerts: true,
+        // port: 5555
+    }
+    // {
+    //     // For running 5 files execution at the same time
+    //     // maxInstances: 5,
+    //     // capabilities for local browser web tests
+    //     browserName: 'firefox',
+    //     port: 5555
+    //     // acceptInsecureCerts: true
+    // }
+    ],
     //
     // ===================
     // Test Configurations
@@ -71,6 +98,7 @@ exports.config = {
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     logLevel: 'info',
+    // logLevel: 'error',
     //
     // Set specific log levels per logger
     // loggers:
@@ -110,7 +138,34 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
+    // services: ['chromedriver'], // By activating this will run chrome driver only
+    // By activating this will run selenium standalone service only
+    // services: [
+    //     ['selenium-standalone', {
+    //         port: 5555,
+    //     }]
+    // ],
+
+    services: ['selenium-standalone'],
+    port: 5555,
+    //     seleniumArgs: {
+    //     seleniumArgs: ["-port", "5555"],
+    // },
+
+
+    //     seleniumArgs: {
+    //         seleniumArgs: ['--port', '5555'],
+    // },
+    // services: [
+    //     ['selenium-standalone', 
+    //     {
+    //         logPath: './temp',
+    //         args: {
+    //             version: "4.4.0",
+    //             seleniumArgs: ['-host', '127.0.0.1','-port', '5555']
+    //         },
+    //     }]
+    // ], 
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -213,6 +268,9 @@ exports.config = {
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
     // beforeTest: function (test, context) {
+    // },
+    // beforeTest: async function () {
+    //     await browser.setWindowSize (1000, 800);
     // },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling

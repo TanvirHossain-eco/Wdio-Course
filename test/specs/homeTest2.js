@@ -1,31 +1,31 @@
-// // Practice E-Commerce Site – Automation Bro
-// // https://practice.automationbro.com/
-// describe('Home', () => {
-//     it('Open Url & assert title', async() => {
-//         // open URL
-//         await browser.url('https://practice.automationbro.com/');
-//         // await new Promise(resolve => setTimeout(resolve, 5000));
+// Practice E-Commerce Site – Automation Bro
+// https://practice.automationbro.com/
+describe('Home', () => {
+    it('Open Url & assert title', async() => {
+        // open URL
+        await browser.url('https://practice.automationbro.com/');
+        // await new Promise(resolve => setTimeout(resolve, 5000));
 
-//         // Assert title
-//         await expect(browser).toHaveTitle('Practice A-Commerce Site – Automation Bro');
-//     });
+        // Assert title
+        await expect(browser).toHaveTitle('Practice A-Commerce Site – Automation Bro');
+    });
 
-//     // it('Open Url & assert title', () => {
-//     //     // open URL
-//     //     browser.url('https://www.facebook.com/');
-//     //     // await new Promise(resolve => setTimeout(resolve, 5000));
+    // it('Open Url & assert title', () => {
+    //     // open URL
+    //     browser.url('https://www.facebook.com/');
+    //     // await new Promise(resolve => setTimeout(resolve, 5000));
 
-//     //     // Assert title
-//     //     expect(browser).toHaveTitle('Practice E-Commerce Site – Automation Bro');
+    //     // Assert title
+    //     expect(browser).toHaveTitle('Practice E-Commerce Site – Automation Bro');
 
         // Different waiting code & not need use await & good use for if loading time very much slow
         // browser.pause(1000); 
-        // browser.url('/');
+        browser.url('/');
 
 
 
-//     // });
-// });
+    // });
+});
 
 describe('Navigation Menu', () => {
     it('Get the text of all menu items & assert them - using the wait command', async() => {

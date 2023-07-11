@@ -1,10 +1,16 @@
-
+// Import home-page
 import HomePage from "../pages/home-page";
+// Import Allure reporter
+import allureReporter from '@wdio/allure-reporter';
+
 // const HomePage = require('../pages/home-page');
 // let homepage = new HomePage;
 
 describe('Navigation Menu', () => {
     it('Get the text of all menu items & assert them', async() => {
+        // Set Severity or any add any kind of features of Allure reporter
+        allureReporter.addFeature("Navigation");
+        allureReporter.addSeverity("Critical");
         // Different waiting code & not need use await & good use for if loading time very much slow
         // browser.pause(1000); 
         // browser.url('/');
@@ -47,7 +53,7 @@ describe('Navigation Menu', () => {
 
     });
 
-    it.only('Get the text of all menu items & assert them - using the wait command', async() => {
+    it('Get the text of all menu items & assert them - using the wait command', async() => {
         // Different waiting code & not need use await & good use for if loading time very much slow
         // browser.pause(1000); 
         // browser.url('/');

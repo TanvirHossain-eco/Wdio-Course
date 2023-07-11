@@ -24,10 +24,6 @@ describe('Contact', () => {
         // await ContactPage.submitForm ('Test Name', 'test@test.com', '+441234567890', 'This is a test message. Please ignore it. Thank you');
         // Submit Form Dynamic Faker Data via POM
         await ContactPage.submitForm (faker.name.findName(), faker.internet.email(), faker.phone.phoneNumber(), faker.lorem.paragraphs(2));
-
-
-
-        
         // wait for 5 secs
         // await new Promise(resolve => setTimeout(resolve, 3000));
 

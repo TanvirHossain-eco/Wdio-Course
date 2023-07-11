@@ -3,6 +3,9 @@
 // Import Home Page class here
 
 import HomePage from "../pages/home-page";
+// Import Allure reporter
+import allureReporter from '@wdio/allure-reporter';
+
 // const HomePage = require('../pages/home-page');
 // let homepage = new HomePage;
 // console.log(HomePage, x);
@@ -31,6 +34,9 @@ describe('Home', () => {
     })
 
     it('Open Url & Assert title', async() => {
+        // Set Severity or any add any kind of features of Allure reporter
+        allureReporter.addSeverity("Minor");
+        
         // open Home Page URL by using await & directly
         // await browser.url('/'); //Method 1
 
@@ -72,6 +78,9 @@ describe('Home', () => {
     });
 
     it('Click Logo & Assert URL does not contain get-started text', async() => {
+        // Set Severity or any add any kind of features of Allure reporter
+        allureReporter.addFeature("Logo Verification");
+        
         // open Home Page URL by using await & directly
         // await browser.url('https://practice.automationbro.com/'); //Method 1
 

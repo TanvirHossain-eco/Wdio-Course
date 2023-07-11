@@ -33,7 +33,7 @@ class ContactPage{
         await this.inputPhone.addValue(phone);
         await this.txtAreaMessage.addValue(message);
 
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        await new Promise(resolve => setTimeout(resolve, 5000));
         await this.btnSubmit.click();
     }
 

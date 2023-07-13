@@ -1,5 +1,10 @@
-const allure = require('allure-commandline') // Defining Allure Package
+const allure = require('allure-commandline') // Defining Allure Package - Modified by Tanvir
 exports.config = {
+    // ===============================================
+    // BrowserStack Configuration - Modified by Tanvir
+    // ===============================================
+    user: process.env.BROWSERSTACK_USERNAME,
+    key: process.env.BROWSERSTACK_ACCESS_KEY,
     //
     // ====================
     // Runner Configuration
@@ -23,6 +28,9 @@ exports.config = {
     // then the current working directory is where your `package.json` resides, so `wdio`
     // will be called from there.
     //
+    // ================================================================================================
+    // Spec Files Configuration - Modified by Tanvir
+    // ================================================================================================
     specs: [
         // ToDo: define location for spec files here
         './test/specs/**/*.js'
@@ -74,20 +82,46 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
+    capabilities: [
+        // ================================================================================================
+        // Browser Capabilities for running test in local including port Configuration - Modified by Tanvir
+        // ================================================================================================
+        
+    //     {
+    //     // For running 5 files execution at the same time
+    //     // maxInstances: 5,
+    //     // capabilities for local browser web tests
+    //     browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
+    //     // acceptInsecureCerts: true,
+    //     port: 5556
+    // },
+    // {
+    //     // For running 5 files execution at the same time
+    //     // maxInstances: 5,
+    //     // capabilities for local browser web tests
+    //     browserName: 'firefox',
+    //     port: 5556
+    //     // acceptInsecureCerts: true
+    // }
+
+    // ========================================================================================
+    // Browser Capabilities for running test in BrowserStack Configuration - Modified by Tanvir
+    // ========================================================================================
+
+    {
         // For running 5 files execution at the same time
         // maxInstances: 5,
         // capabilities for local browser web tests
         browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
         // acceptInsecureCerts: true,
-        port: 5556
+        // port: 5556
     },
     {
         // For running 5 files execution at the same time
         // maxInstances: 5,
         // capabilities for local browser web tests
         browserName: 'firefox',
-        port: 5556
+        // port: 5556
         // acceptInsecureCerts: true
     }
     ],
@@ -139,14 +173,35 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
+    // ===================================================================
+    // ChromeDriver Services Configuration - Modified by Tanvir
+    // ===================================================================
     // services: ['chromedriver'], // By activating this will run chrome driver only
+
+    // ===================================================================
+    // Selenium-Standalone Services Configuration - Modified by Tanvir
+    // ===================================================================
     // By activating this will run selenium standalone service only
-    services: [['selenium-standalone', {
-        logPath: './temp',
-        args: {
-            seleniumArgs: ['--port', '5556']
-        },
-    }]],
+    // services: [['selenium-standalone', {
+    //     logPath: './temp',
+    //     args: {
+    //         seleniumArgs: ['--port', '5556']
+    //     },
+    // }]],
+    
+    // ===================================================================
+    // BrowserStack Services Configuration - Modified by Tanvir
+    // ===================================================================
+    services: [
+        ['browserstack', {
+            testObservability: true,
+            testObservabilityOptions: {
+                projectName: "Practice of Automation Bro",
+                buildName: "Smoke Test"
+            },
+            browserstackLocal: false // True if Project run locally or else false
+        }]
+    ],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -168,10 +223,14 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    // Spec report only
+    // ===================================================================
+    // Spec report Configuration - Modified by Tanvir
+    // ===================================================================
     // reporters: ['spec'], 
 
-    // Spec Reports & Allure Reports
+    // ===================================================================
+    // Spec & Allure Reports Configuration - Modified by Tanvir
+    // ===================================================================
     reporters: ['spec', ['allure', {
         outputDir: 'allure-results',
         disableWebdriverStepsReporting: false, // Step Reporting - Set to False Manually
@@ -288,8 +347,10 @@ exports.config = {
     // After a particular test
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
     // },
-
-    // Take screenshot if there is a failure and show it on Allure report
+    
+    // ======================================================================================================
+    // Take screenshot if there is a failure and show it on Allure report Configuration - Modified by Tanvir
+    // ======================================================================================================
     afterTest: async function(test, context, { error }) {
         if (error) {
             await browser.takeScreenshot();
@@ -339,8 +400,10 @@ exports.config = {
      */
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
-    // For Auto Generating Allure Reports
     
+    // =======================================================================
+    // For Auto Generating Allure Reports Configuration - Modified by Tanvir
+    // =======================================================================
     onComplete: function() {
         const reportError = new Error('Could not generate Allure report')
         const generation = allure(['generate', 'allure-results', '--clean'])

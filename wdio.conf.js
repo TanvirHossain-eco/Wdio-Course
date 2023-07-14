@@ -3,8 +3,8 @@ exports.config = {
     // ===============================================
     // BrowserStack Configuration - Modified by Tanvir
     // ===============================================
-    // user: process.env.BROWSERSTACK_USERNAME,
-    // key: process.env.BROWSERSTACK_ACCESS_KEY,
+    user: process.env.BROWSERSTACK_USERNAME,
+    key: process.env.BROWSERSTACK_ACCESS_KEY,
     //
     // ====================
     // Runner Configuration
@@ -189,6 +189,8 @@ exports.config = {
             seleniumArgs: ['--port', '5556']
         },
     }]],
+
+    // services: ['selenium-standalone'], // By activating this will run Selenium Standalone without port
     
     // ===================================================================
     // BrowserStack Services Configuration - Modified by Tanvir
@@ -203,6 +205,8 @@ exports.config = {
     //         browserstackLocal: false // True if Project run locally or else false
     //     }]
     // ],
+
+    // services: ['browserstack'], // By activating this will run Browser Stack only
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber

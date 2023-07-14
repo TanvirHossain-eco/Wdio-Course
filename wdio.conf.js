@@ -3,8 +3,8 @@ exports.config = {
     // ===============================================
     // BrowserStack Configuration - Modified by Tanvir
     // ===============================================
-    // user: process.env.BROWSERSTACK_USERNAME,
-    // key: process.env.BROWSERSTACK_ACCESS_KEY,
+    user: process.env.BROWSERSTACK_USERNAME,
+    key: process.env.BROWSERSTACK_ACCESS_KEY,
     //
     // ====================
     // Runner Configuration
@@ -87,43 +87,43 @@ exports.config = {
         // Browser Capabilities for running test in local including port Configuration - Modified by Tanvir
         // ================================================================================================
         
-        {
-        // For running 5 files execution at the same time
-        // maxInstances: 5,
-        // capabilities for local browser web tests
-        browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
-        // acceptInsecureCerts: true,
-        port: 5556
-    },
-    {
-        // For running 5 files execution at the same time
-        // maxInstances: 5,
-        // capabilities for local browser web tests
-        browserName: 'firefox',
-        port: 5556
-        // acceptInsecureCerts: true
-    }
-
-    // ========================================================================================
-    // Browser Capabilities for running test in BrowserStack Configuration - Modified by Tanvir
-    // ========================================================================================
-
-    // {
+    //     {
     //     // For running 5 files execution at the same time
     //     // maxInstances: 5,
     //     // capabilities for local browser web tests
     //     browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
     //     // acceptInsecureCerts: true,
-    //     // port: 5556
+    //     port: 5556
     // },
     // {
     //     // For running 5 files execution at the same time
     //     // maxInstances: 5,
     //     // capabilities for local browser web tests
     //     browserName: 'firefox',
-    //     // port: 5556
+    //     port: 5556
     //     // acceptInsecureCerts: true
     // }
+
+    // ========================================================================================
+    // Browser Capabilities for running test in BrowserStack Configuration - Modified by Tanvir
+    // ========================================================================================
+
+    {
+        // For running 5 files execution at the same time
+        // maxInstances: 5,
+        // capabilities for local browser web tests
+        browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
+        // acceptInsecureCerts: true,
+        // port: 5556
+    },
+    {
+        // For running 5 files execution at the same time
+        // maxInstances: 5,
+        // capabilities for local browser web tests
+        browserName: 'firefox',
+        // port: 5556
+        // acceptInsecureCerts: true
+    }
     ], // End of Capabilities
 
     //
@@ -183,26 +183,26 @@ exports.config = {
     // Selenium-Standalone Services Configuration - Modified by Tanvir
     // ===================================================================
     // By activating this will run selenium standalone service only
-    services: [['selenium-standalone', {
-        logPath: './temp',
-        args: {
-            seleniumArgs: ['--port', '5556']
-        },
-    }]],
+    // services: [['selenium-standalone', {
+    //     logPath: './temp',
+    //     args: {
+    //         seleniumArgs: ['--port', '5556']
+    //     },
+    // }]],
     
     // ===================================================================
     // BrowserStack Services Configuration - Modified by Tanvir
     // ===================================================================
-    // services: [
-    //     ['browserstack', {
-    //         testObservability: true,
-    //         testObservabilityOptions: {
-    //             projectName: "Practice of Automation Bro",
-    //             buildName: "Smoke Test"
-    //         },
-    //         browserstackLocal: false // True if Project run locally or else false
-    //     }]
-    // ],
+    services: [
+        ['browserstack', {
+            testObservability: true,
+            testObservabilityOptions: {
+                projectName: "Practice of Automation Bro",
+                buildName: "Smoke Test"
+            },
+            browserstackLocal: false // True if Project run locally or else false
+        }]
+    ],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber

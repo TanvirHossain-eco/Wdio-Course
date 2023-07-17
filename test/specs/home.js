@@ -51,12 +51,12 @@ describe('Home', () => {
 
     it('Open About Page & Assert URL', async() => {
         // open About Page
-        await browser.url('https://practice.automationbro.com/about');
+        await browser.url('https://practice.automationbro.com/about/');
         // wait for 5 secs
         await new Promise(resolve => setTimeout(resolve, 2000));
 
         // Assert URL
-        await expect(browser).toHaveUrl('https://practice.automationbro.com/about');
+        await expect(browser).toHaveUrl('https://practice.automationbro.com/about/');
     });
 
     it('Click Get Started Button & Assert URL contains get-started text', async() => {

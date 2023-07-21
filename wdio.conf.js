@@ -52,7 +52,9 @@ exports.config = {
         smoke: [
             './test/specs/**/home.js',
             './test/specs/**/blog.js',
-            './test/specs/**/contact.js'
+            './test/specs/**/contact.js',
+            
+
             
         ],
         component: [

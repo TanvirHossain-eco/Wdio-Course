@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": ".//*[@aria-labelledby=(//*[normalize-space(text()) = \"Think different. Make different.\"]/@id)] | .//*[@aria-describedby=(//*[normalize-space(text()) = \"Think different. Make different.\"]/@id)] | .//*[@aria-label = \"Think different. Make different.\"] | .//input[@id = (//label[normalize-space() = \"Think different. Make different.\"]/@for)] | .//input[@placeholder=\"Think different. Make different.\"] | .//textarea[@placeholder=\"Think different. Make different.\"] | .//input[@aria-placeholder=\"Think different. Make different.\"] | .//textarea[@aria-placeholder=\"Think different. Make different.\"] | .//*[@title=\"Think different. Make different.\"] | .//img[@alt=\"Think different. Make different.\"] | .//*[normalize-space(text()) = \"Think different. Make different.\"]"
+}

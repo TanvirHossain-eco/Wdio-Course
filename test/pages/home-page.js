@@ -44,6 +44,9 @@ class HomePage{
     get galleryImage1(){
         return $('.elementor-element-dd6929f figure:nth-of-type(1)')
     }
+    get galleryImageClose(){
+        return $('.dialog-close-button')
+    }
 
     get NavComponent(){
         return NavComponent;

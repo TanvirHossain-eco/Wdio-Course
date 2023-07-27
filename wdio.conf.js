@@ -1,4 +1,5 @@
 const allure = require('allure-commandline') // Defining Allure Package - Modified by Tanvir
+const { join } = require('path')
 exports.config = {
     // ===============================================
     // BrowserStack Configuration - Modified by Tanvir
@@ -178,7 +179,37 @@ exports.config = {
     // ===================================================================
     // ChromeDriver Services Configuration - Modified by Tanvir
     // ===================================================================
-    services: ['chromedriver'], // By activating this will run chrome driver only
+    services: ['chromedriver', 
+        [
+            'image-comparison',
+            // The options
+            {
+                // Some options, see the docs for more
+                baselineFolder: join(process.cwd(), './baseLineImages'),
+                formatImageName: '{tag}-{logName}', // -{width}x{height}',
+                screenshotPath: join(process.cwd(), './actualImages/'),
+                savePerInstance: true,
+                autoSaveBaseline: true,
+                blockOutStatusBar: true,
+                blockOutToolBar: true,
+                // NOTE: When you are testing a hybrid app please use this setting
+                // isHybridApp: true,
+                // Options for the tabbing image
+                // tabbableOptions: {
+                //     circle: {
+                //         size: 18,
+                //         fontSize: 18,
+                //         // ...
+                //     },
+                //     line: {
+                //         color: '#ff221a', // hex-code or for example words like `red|black|green`
+                //         width: 3,
+                //     },
+                // },
+                // ... more options
+            },
+        ]
+    ], // By activating this will run chrome driver only
 
     // ===================================================================
     // Selenium-Standalone Services Configuration - Modified by Tanvir

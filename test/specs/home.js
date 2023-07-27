@@ -160,7 +160,7 @@ describe('Home', () => {
         // await new Promise(resolve => setTimeout(resolve, 10000));
     });
 
-    it.only('Find Heading Element 2 & Assert the text', async() => {
+    it('Find Heading Element 2 & Assert the text', async() => {
         // open About Page
         // await browser.url('https://practice.automationbro.com');
 
@@ -186,7 +186,7 @@ describe('Home', () => {
         // wait for 2 secs
         await new Promise(resolve => setTimeout(resolve, 2000));
     });
-    it.only('Find Heading Element 2 Paragraph 1 & Assert the text', async() => {
+    it('Find Heading Element 2 Paragraph 1 & Assert the text', async() => {
         // open About Page
         // await browser.url('https://practice.automationbro.com');
 
@@ -206,7 +206,7 @@ describe('Home', () => {
         // wait for 2 secs
         await new Promise(resolve => setTimeout(resolve, 2000));
     });
-    it.only('Find Heading Element 2 Paragraph 2 & Assert the text', async() => {
+    it('Find Heading Element 2 Paragraph 2 & Assert the text', async() => {
         // open About Page
         // await browser.url('https://practice.automationbro.com');
 
@@ -227,7 +227,7 @@ describe('Home', () => {
         await new Promise(resolve => setTimeout(resolve, 2000));
     });
     
-    it.only('Find Heading Element 3, Paragraph & Assert the text', async() => {
+    it('Find Heading Element 3, Paragraph & Assert the text', async() => {
         // open About Page
         // await browser.url('https://practice.automationbro.com');
 
@@ -272,7 +272,7 @@ describe('Home', () => {
         await new Promise(resolve => setTimeout(resolve, 2000));
     });
 
-    it.only('On click should open the gallery image', async() => {
+    it('On click should open the gallery image, assert it and close the Image', async() => {
         // open About Page
         // await browser.url('https://practice.automationbro.com');
 
@@ -286,10 +286,17 @@ describe('Home', () => {
         await galleryImage1.click();
 
         // wait for 5 secs
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
-        // Close the Gallery Image on click
-        await galleryImage1.click('.eicon-close');
+        // matching the elements with actual image & assert it
+        const actualImage1 = await browser.checkScreen("Gallery-Image-1",{});
+        expect(actualImage1).toEqual(0);
+
+        // find Gallery Image close element by using POM
+        const galleryImageClose = await HomePage.galleryImageClose;
+        
+        // close the Gallery image on click
+        await galleryImageClose.click();
 
     });
 

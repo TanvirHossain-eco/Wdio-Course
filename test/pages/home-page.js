@@ -20,6 +20,9 @@ class HomePage{
     get textHeading(){
         return $('.elementor-widget-container h1');
     }
+    get textHeadingParagraph(){
+        return $('.elementor-element-db85304 p');
+    }
     get scrollElement2(){
         return $('.elementor-element-71f70e6')
     }
@@ -46,6 +49,51 @@ class HomePage{
     }
     get galleryImageClose(){
         return $('.dialog-close-button')
+    }
+    get scrollElement4(){
+        return $('.elementor-element-32d26c0')
+    }
+    get textHeading4(){
+        return $('.elementor-element-32d26c0 h3')
+    }
+    get textE4Paragraph(){
+        return $('.elementor-element-32d26c0 p')
+    }
+    get scrollElement5(){
+        return $('.elementor-element-66e793f')
+    }
+    get textHeading5(){
+        return $('.elementor-element-66e793f h3')
+    }
+    get textE5Paragraph(){
+        return $('.elementor-element-66e793f p')
+    }
+    get scrollElement6(){
+        return $('.elementor-element-0afa3ac')
+    }
+    get textHeading6(){
+        return $('.elementor-element-0afa3ac h3')
+    }
+    get textE6Paragraph(){
+        return $('.elementor-element-0afa3ac p')
+    }
+    get scrollElement7(){
+        return $('.elementor-element-26a4edb')
+    }
+    get textHeading7(){
+        return $('.elementor-element-26a4edb h3')
+    }
+    get textE7Paragraph(){
+        return $('.elementor-element-26a4edb p')
+    }
+    get scrollElement8(){
+        return $('.elementor-element-9f81a2d')
+    }
+    get textHeading8(){
+        return $('.elementor-element-9f81a2d h3')
+    }
+    get textE8Paragraph(){
+        return $('.elementor-element-9f81a2d p')
     }
 
     get NavComponent(){

@@ -46,7 +46,7 @@ exports.config = {
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
-        './test/specs/**/homeTest2.js'
+        // './test/specs/**/homeTest2.js'
     ],
     // Define Suites to run multiple tests
     suites: {
@@ -54,6 +54,7 @@ exports.config = {
             './test/specs/**/home.js',
             './test/specs/**/blog.js',
             './test/specs/**/contact.js',
+            './test/specs/**/homeTest2.js',
             
 
             
@@ -161,6 +162,7 @@ exports.config = {
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
     baseUrl: 'https://practice.automationbro.com/',
+    // baseUrl: 'https://rahulshettyacademy.com/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,

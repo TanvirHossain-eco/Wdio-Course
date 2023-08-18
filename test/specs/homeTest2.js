@@ -26,7 +26,7 @@
 
 //     // });
 // });
-
+// const expectchai = require('chai').expect
 describe('Navigation Menu', () => {
     it('Get the text of all menu items & assert them - using the wait command', async() => {
         // Different waiting code & not need use await & good use for if loading time very much slow
@@ -162,13 +162,32 @@ describe('Navigation Menu', () => {
         
     });
     // Handling Alert with JS & WebdriverIO
-    it.only('Alert Message', async() => {
-        await browser.url("https://only-testing-blog.blogspot.com/2014/09/selectable.html")
-        await $("button").doubleClick()
-        // await browser.pause(3000)
-        const alertMesg = await browser.isAlertOpen()
-        console.log(alertMesg)
-        expect(alertMesg).to.be.true 
+    it.only('Alert Message with double click in Popup', async() => {
+        browser.url("https://only-testing-blog.blogspot.com/2014/09/selectable.html");
+        // await $("button").doubleClick()
+        const buttonElement = await $('button[ondblclick="myFunction()"]');
+        await buttonElement.doubleClick();
+        await browser.pause(3000);
+        console.log(await browser.isAlertOpen())
+        await expect(await browser.isAlertOpen()).to.be.true
+        console.log(await browser.getAlertText())
+        await expect(await browser.getAlertText()).toEqual("You double clicked me.. Thank You..")
+        await browser.acceptAlert()
+        await browser.pause(3000)
+        
+        // const isAlertOpen = browser.waitUntil.isAlert();
+        // expect(buttonElement).toBeDisplayed();
+        // // await browser.pause(1000);
+        // const alertText = browser.getAlertText();
+        // console.log("Alert Text: ", alertText);
+        // expect(alertText).toEqual("You double clicked me.. Thank You..")
+        // browser.pause(3000);
+        // browser.acceptAlert();
+
+
+        // const alertMesg = await browser.isAlertOpen()
+        // console.log(alertMesg)
+        // expect(alertMesg).to.be.true 
         // const alertTextMsg = await browser.getAlertText()
         // console.log("Alert Text: ", alertTextMsg)
         // await browser.pause(3000)

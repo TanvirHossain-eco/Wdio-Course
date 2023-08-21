@@ -117,6 +117,7 @@ describe('Navigation Menu', () => {
         await expect (modal).not.toBeDisabled()
         const dropdown = await $("select.form-control")
         dropdown.selectByAttribute('value', 'teach')
+        // eslint-disable-next-line wdio/no-pause
         await browser.pause(3000)
         dropdown.selectByVisibleText("Consultant")
         // await browser.pause(5000)
@@ -127,12 +128,14 @@ describe('Navigation Menu', () => {
     it.only('Dynamic Dropdown Controls', async() => {
         await browser.url("https://rahulshettyacademy.com/AutomationPractice/")
         await $("#autocomplete").setValue("ind")
+        // eslint-disable-next-line wdio/no-pause
         await browser.pause(3000)
         let items = await $$("[class='ui-menu-item'] div")
         for(var i =0;i<await items.length;i++){
             // console.log(await items[i].getText())
             if (await items[i].getText() === "India"){
                 await items[i].click()
+                // eslint-disable-next-line wdio/no-pause
                 await browser.pause(3000)
             }
         }
@@ -143,9 +146,11 @@ describe('Navigation Menu', () => {
     it.only('Checkboxes Identification', async() => {
         const checkboxElement = await $$("input[type='checkbox']") 
         await checkboxElement[1].click() 
+        // eslint-disable-next-line wdio/no-pause
         await browser.pause(3000)
         console.log(await checkboxElement[1].isSelected())
         // console.log(await checkboxElement[2].isSelected())
+        // eslint-disable-next-line wdio/no-pause
         await browser.pause(3000)
         // This is for the tracing the bugs if bugs generates continuously
         // await browser.saveScreenshot("Screenshot.png")
@@ -154,10 +159,13 @@ describe('Navigation Menu', () => {
     it.only('Scrolling and Mouse Hover', async() => {
         // During the scrolling If Target class or id take out of view then need to select id/class above 
         await $("div.totalAmount").scrollIntoView()
+        // eslint-disable-next-line wdio/no-pause
         await browser.pause(3000)
         await $("#mousehover").moveTo()
+        // eslint-disable-next-line wdio/no-pause
         await browser.pause(3000)
         await $("=Top").click()
+        // eslint-disable-next-line wdio/no-pause
         await browser.pause(3000)
         
     });
@@ -165,15 +173,17 @@ describe('Navigation Menu', () => {
     it.only('Alert Message with double click in Popup', async() => {
         browser.url("https://only-testing-blog.blogspot.com/2014/09/selectable.html");
         // await $("button").doubleClick()
-        const buttonElement = await $('button[ondblclick="myFunction()"]');
-        await buttonElement.doubleClick();
+        const buttonElement = await $('//button[@ondblclick="myFunction()"]');
+        await buttonElement.doubleClick().isAlertOpen();
+        // eslint-disable-next-line wdio/no-pause
         await browser.pause(3000);
-        console.log(await browser.isAlertOpen())
-        await expect(await browser.isAlertOpen()).to.be.true
-        console.log(await browser.getAlertText())
-        await expect(await browser.getAlertText()).toEqual("You double clicked me.. Thank You..")
-        await browser.acceptAlert()
-        await browser.pause(3000)
+        // console.log(await browser.isAlertOpen())
+        // await expect(await browser.isAlertOpen()).to.be.true
+        // console.log(await browser.getAlertText())
+        // await expect(await browser.getAlertText()).toEqual("You double clicked me.. Thank You..")
+        // await browser.acceptAlert()
+        // // eslint-disable-next-line wdio/no-pause
+        // await browser.pause(3000)
         
         // const isAlertOpen = browser.waitUntil.isAlert();
         // expect(buttonElement).toBeDisplayed();

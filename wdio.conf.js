@@ -92,17 +92,19 @@ exports.config = {
         // maxInstances: 5,
         // capabilities for local browser web tests
         browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
+        // browserVersion: '116.0.5845.96'
         // acceptInsecureCerts: true,
-        port: 5556
-    },
-    {
-        // For running 5 files execution at the same time
-        // maxInstances: 5,
-        // capabilities for local browser web tests
-        browserName: 'firefox',
-        port: 5556
-        // acceptInsecureCerts: true
+        // port: 5556
     }
+    // ,
+    // {
+    //     // For running 5 files execution at the same time
+    //     // maxInstances: 5,
+    //     // capabilities for local browser web tests
+    //     browserName: 'firefox',
+    //     port: 5556
+    //     // acceptInsecureCerts: true
+    // }
 
     // ========================================================================================
     // Browser Capabilities for running test in BrowserStack Configuration - Modified by Tanvir
@@ -183,14 +185,14 @@ exports.config = {
     // Selenium-Standalone Services Configuration - Modified by Tanvir
     // ===================================================================
     // By activating this will run selenium standalone service only
-    services: [['selenium-standalone', {
-        logPath: './temp',
-        args: {
-            seleniumArgs: ['--port', '5556']
-        },
-    }]],
+    // services: [['selenium-standalone', {
+    //     logPath: './temp',
+    //     args: {
+    //         seleniumArgs: ['--port', '5556']
+    //     },
+    // }]],
 
-    // services: ['selenium-standalone'], // By activating this will run Selenium Standalone without port
+    services: ['selenium-standalone'], // By activating this will run Selenium Standalone without port
     
     // ===================================================================
     // BrowserStack Services Configuration - Modified by Tanvir

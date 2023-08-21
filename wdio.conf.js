@@ -45,14 +45,15 @@ exports.config = {
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
-        './test/specs/**/homeTest2.js'
+        // './test/specs/**/homeTest2.js'
     ],
     // Define Suites to run multiple tests
     suites: {
         smoke: [
             './test/specs/**/home.js',
             './test/specs/**/blog.js',
-            './test/specs/**/contact.js'
+            './test/specs/**/contact.js',
+            './test/specs/**/homeTest2.js'
             
         ],
         component: [
@@ -93,16 +94,17 @@ exports.config = {
         // capabilities for local browser web tests
         browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
         // acceptInsecureCerts: true,
-        port: 5556
-    },
-    {
-        // For running 5 files execution at the same time
-        // maxInstances: 5,
-        // capabilities for local browser web tests
-        browserName: 'firefox',
-        port: 5556
-        // acceptInsecureCerts: true
+        port: 5557
     }
+    // ,
+    // {
+    //     // For running 5 files execution at the same time
+    //     // maxInstances: 5,
+    //     // capabilities for local browser web tests
+    //     browserName: 'firefox',
+    //     port: 5557
+    //     // acceptInsecureCerts: true
+    // }
 
     // ========================================================================================
     // Browser Capabilities for running test in BrowserStack Configuration - Modified by Tanvir
@@ -186,7 +188,7 @@ exports.config = {
     services: [['selenium-standalone', {
         logPath: './temp',
         args: {
-            seleniumArgs: ['--port', '5556']
+            seleniumArgs: ['--port', '5557']
         },
     }]],
 

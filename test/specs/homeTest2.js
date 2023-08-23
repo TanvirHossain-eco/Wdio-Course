@@ -171,19 +171,44 @@ describe('Navigation Menu', () => {
     });
     // Handling Alert with JS & WebdriverIO
     it.only('Alert Message with double click in Popup', async() => {
-        browser.url("https://only-testing-blog.blogspot.com/2014/09/selectable.html");
+        await browser.url("https://only-testing-blog.blogspot.com/2014/09/selectable.html");
+        // await browser.url("https://the-internet.herokuapp.com/javascript_alerts");
         // await $("button").doubleClick()
-        const buttonElement = await $('button[ondblclick="myFunction()"]');
+        const buttonElement = await $('//button[@ondblclick="myFunction()"]');
+        // const buttonElement = await $('//button[@onclick="jsAlert()"]');
+        // await buttonElement.moveTo()
         await buttonElement.doubleClick()
+        // await buttonElement.click()
         // eslint-disable-next-line wdio/no-pause
-        await browser.pause(3000);
-        console.log(await browser.isAlertOpen())
-        await expect(await browser.isAlertOpen()).to.be.true
-        console.log(await browser.getAlertText())
-        await expect(await browser.getAlertText()).toEqual("You double clicked me.. Thank You..")
+        // await browser.pause(3000)
+        // wait for 3 secs
+        // await new Promise(resolve => setTimeout(resolve, 3000));
+
+        await browser.waitUntil(async() => await browser.isAlertOpen())
+
+        const alertText = await browser.getAlertText()
+        
+        // eslint-disable-next-line wdio/no-pause
+        // await browser.pause(3000)
+        
+        expect(alertText).toContain("You double clicked me.. Thank You..")
+        // await expect(alertText).toContain("I am a JS Alert")
+
+        // eslint-disable-next-line wdio/no-pause
+        // await browser.pause(3000)
+
         await browser.acceptAlert()
-        // eslint-disable-next-line wdio/no-pause
-        await browser.pause(3000)
+
+
+        // // eslint-disable-next-line wdio/no-pause
+        // await browser.pause(3000);
+        // console.log(await browser.isAlertOpen())
+        // await expect(await browser.isAlertOpen()).to.be.true
+        // console.log(await browser.getAlertText())
+        // await expect(await browser.getAlertText()).toEqual("You double clicked me.. Thank You..")
+        // await browser.acceptAlert()
+        // // eslint-disable-next-line wdio/no-pause
+        // await browser.pause(3000)
         
         // const isAlertOpen = browser.waitUntil.isAlert();
         // expect(buttonElement).toBeDisplayed();

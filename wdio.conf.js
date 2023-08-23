@@ -117,6 +117,7 @@ exports.config = {
         // maxInstances: 5,
         // capabilities for local browser web tests
         browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
+        browserVersion: '116.0.5845.96'
         // acceptInsecureCerts: true,
         // port: 5556
     },
@@ -180,7 +181,7 @@ exports.config = {
     // commands. Instead, they hook themselves up into the test process.
     // ===================================================================
     // ChromeDriver Services Configuration - Modified by Tanvir
-    // ===================================================================
+    // // ===================================================================
     services: ['chromedriver', 
         [
             'image-comparison',
@@ -212,6 +213,7 @@ exports.config = {
             },
         ]
     ], // By activating this will run chrome driver only
+    
 
     // ===================================================================
     // Selenium-Standalone Services Configuration - Modified by Tanvir

@@ -125,7 +125,7 @@ describe('Navigation Menu', () => {
     });
 
     // For Selecting Dropdowns 
-    it.only('Dynamic Dropdown Controls', async() => {
+    it('Dynamic Dropdown Controls', async() => {
         await browser.url("https://rahulshettyacademy.com/AutomationPractice/")
         await $("#autocomplete").setValue("ind")
         // eslint-disable-next-line wdio/no-pause
@@ -143,7 +143,7 @@ describe('Navigation Menu', () => {
         
     });
     // Check Boxes selection
-    it.only('Checkboxes Identification', async() => {
+    it('Checkboxes Identification', async() => {
         const checkboxElement = await $$("input[type='checkbox']") 
         await checkboxElement[1].click() 
         // eslint-disable-next-line wdio/no-pause
@@ -156,7 +156,7 @@ describe('Navigation Menu', () => {
         // await browser.saveScreenshot("Screenshot.png")
     });
     // Scrolling & Mouse Hover
-    it.only('Scrolling and Mouse Hover', async() => {
+    it('Scrolling and Mouse Hover', async() => {
         // During the scrolling If Target class or id take out of view then need to select id/class above 
         await $("div.totalAmount").scrollIntoView()
         // eslint-disable-next-line wdio/no-pause
@@ -173,17 +173,17 @@ describe('Navigation Menu', () => {
     it.only('Alert Message with double click in Popup', async() => {
         browser.url("https://only-testing-blog.blogspot.com/2014/09/selectable.html");
         // await $("button").doubleClick()
-        const buttonElement = await $('//button[@ondblclick="myFunction()"]');
-        await buttonElement.doubleClick().isAlertOpen();
+        const buttonElement = await $('button[ondblclick="myFunction()"]');
+        await buttonElement.doubleClick()
         // eslint-disable-next-line wdio/no-pause
         await browser.pause(3000);
-        // console.log(await browser.isAlertOpen())
-        // await expect(await browser.isAlertOpen()).to.be.true
-        // console.log(await browser.getAlertText())
-        // await expect(await browser.getAlertText()).toEqual("You double clicked me.. Thank You..")
-        // await browser.acceptAlert()
-        // // eslint-disable-next-line wdio/no-pause
-        // await browser.pause(3000)
+        console.log(await browser.isAlertOpen())
+        await expect(await browser.isAlertOpen()).to.be.true
+        console.log(await browser.getAlertText())
+        await expect(await browser.getAlertText()).toEqual("You double clicked me.. Thank You..")
+        await browser.acceptAlert()
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
         
         // const isAlertOpen = browser.waitUntil.isAlert();
         // expect(buttonElement).toBeDisplayed();

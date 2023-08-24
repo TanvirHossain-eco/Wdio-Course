@@ -170,7 +170,7 @@ describe('Navigation Menu', () => {
         
     });
     // Handling Alert with JS & WebdriverIO
-    it.only('Alert Message with double click in Popup', async() => {
+    it('Alert Message with double click in Popup', async() => {
         await browser.url("https://only-testing-blog.blogspot.com/2014/09/selectable.html");
         // await browser.url("https://the-internet.herokuapp.com/javascript_alerts");
         // await $("button").doubleClick()
@@ -236,6 +236,49 @@ describe('Navigation Menu', () => {
         // await browser.pause(3000)
         // await browser.acceptAlert()
 
+        
+    });
+
+    it.only('Alert Message with double click in Popup', async() => {
+        browser.url("https://only-testing-blog.blogspot.com/2014/09/selectable.html");
+        // await $("button").doubleClick()
+        const buttonElement = await $('button[ondblclick="myFunction()"]');
+        await buttonElement.doubleClick()
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000);
+        console.log(await browser.isAlertOpen())
+        await expect(await browser.isAlertOpen()).to.be.true
+        console.log(await browser.getAlertText())
+        await expect(await browser.getAlertText()).toEqual("You double clicked me.. Thank You..")
+        await browser.acceptAlert()
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        
+        // const isAlertOpen = browser.waitUntil.isAlert();
+        // expect(buttonElement).toBeDisplayed();
+        // // await browser.pause(1000);
+        // const alertText = browser.getAlertText();
+        // console.log("Alert Text: ", alertText);
+        // expect(alertText).toEqual("You double clicked me.. Thank You..")
+        // browser.pause(3000);
+        // browser.acceptAlert();
+ 
+ 
+        // const alertMesg = await browser.isAlertOpen()
+        // console.log(alertMesg)
+        // expect(alertMesg).to.be.true 
+        // const alertTextMsg = await browser.getAlertText()
+        // console.log("Alert Text: ", alertTextMsg)
+        // await browser.pause(3000)
+        // await browser.acceptAlert()
+        // await browser.isAlertOpen()
+        // await browser.pause(3000)
+        // (await browser.isAlertOpen())
+        // await browser.pause(3000)
+        // expect(await browser.getAlertText()).toEqual("You double clicked me.. Thank You..")
+        // await browser.pause(3000)
+        // await browser.acceptAlert()
+ 
         
     });
 });

@@ -177,13 +177,14 @@ describe('Navigation Menu', () => {
         const buttonElement = await $('//button[@ondblclick="myFunction()"]');
         // const buttonElement = await $('//button[@onclick="jsAlert()"]');
         // await buttonElement.moveTo()
+        
         await buttonElement.doubleClick()
         // await buttonElement.click()
         // eslint-disable-next-line wdio/no-pause
-        // await browser.pause(3000)
+        await browser.pause(1000)
         // wait for 3 secs
         // await new Promise(resolve => setTimeout(resolve, 3000));
-
+        // await browser.execute(async() => await buttonElement.doubleClick());
         await browser.waitUntil(async() => await browser.isAlertOpen())
 
         const alertText = await browser.getAlertText()

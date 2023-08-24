@@ -1,0 +1,4 @@
+{
+  "script": "return (async () => await buttonElement.doubleClick()).apply(null, arguments)",
+  "args": []
+}

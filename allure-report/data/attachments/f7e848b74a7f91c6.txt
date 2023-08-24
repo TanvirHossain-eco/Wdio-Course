@@ -1,0 +1,4 @@
+{
+  "script": "return (() => {\n      browser.alert = function () {\n        // Do nothing to prevent the alert from being closed\n      };\n    }).apply(null, arguments)",
+  "args": []
+}

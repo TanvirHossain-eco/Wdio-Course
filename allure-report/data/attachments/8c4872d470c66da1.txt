@@ -1,0 +1,4 @@
+{
+  "script": "return (() => {\n      // Override the window.alert function to capture the alert message\n      window.originalAlert = window.alert;\n      window.alert = function (message) {\n        window.alertMessage = message;\n      };\n    }).apply(null, arguments)",
+  "args": []
+}

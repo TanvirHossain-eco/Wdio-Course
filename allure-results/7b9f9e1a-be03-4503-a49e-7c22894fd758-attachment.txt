@@ -1,0 +1,4 @@
+{
+  "script": "return (async () => await browser.isAlertOpen()).apply(null, arguments)",
+  "args": []
+}

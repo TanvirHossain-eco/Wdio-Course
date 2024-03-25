@@ -92,7 +92,7 @@ exports.config = {
         // maxInstances: 5,
         // capabilities for local browser web tests
         browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
-        // browserVersion: '116.0.5845.96'
+        // browserVersion: '123.0.6312.59'
         // acceptInsecureCerts: true,
         // port: 5556
     }

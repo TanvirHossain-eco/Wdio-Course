@@ -120,7 +120,11 @@ exports.config = {
         // maxInstances: 5,
         // capabilities for local browser web tests
         browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
+<<<<<<< HEAD
         browserVersion: '116.0.5845.96'
+=======
+        // browserVersion: '123.0.6312.58'
+>>>>>>> 1dde78160133d26aad8299243031998ce3a2d777
         // 'goog:chromeOptions': {
         //     binary: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', // Path to chrome.exe
         //     args: [], // Optional command line arguments

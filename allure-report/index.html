@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html dir="ltr">
+<html dir="ltr" lang="en">
 <head>
     <meta charset="utf-8">
     <title>Allure Report</title>
-    <link rel="favicon" href="favicon.ico?v=3">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="styles.css">
-        <link rel="stylesheet" href="plugins/screen-diff/styles.css">
+    <link rel="stylesheet" type="text/css" href="plugin/screen-diff/styles.css">
 </head>
 <body>
+<<<<<<< HEAD
 <div id="alert"></div>
 <div id="content">
     <span class="spinner">
@@ -28,5 +29,29 @@
     gtag('allureVersion', '2.23.1')
     gtag('reportUuid', '0a6f7ffc-ea1d-404b-b936-c17598cec127')
 </script>
+=======
+    <div id="alert"></div>
+    <div id="content">
+        <span class="spinner">
+            <span class="spinner__circle"></span>
+        </span>
+    </div>
+    <div id="popup"></div>
+    <script src="app.js"></script>
+    <script src="plugin/behaviors/index.js"></script>
+    <script src="plugin/packages/index.js"></script>
+    <script src="plugin/screen-diff/index.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVWC4GKEYS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FVWC4GKEYS', {
+          'allureVersion': 'dev',
+          'reportUuid': 'e18005bf-a227-4abd-91b1-851a6c627d19',
+          'single_file': false
+        });
+    </script>
+>>>>>>> 1dde78160133d26aad8299243031998ce3a2d777
 </body>
 </html>

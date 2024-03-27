@@ -1,4 +1,5 @@
 "Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+<<<<<<< HEAD
 "","Navigation Menu","","1","4","21","0","4"
 "","Home","","3","1","65","0","2"
 "","Upload Tests","","0","0","2","0","2"
@@ -9,3 +10,15 @@
 "","Logo Verification","","0","0","1","0","0"
 "","automationbro-webpage","","0","0","0","0","1"
 "","Automationbro-Webpage","","0","0","0","0","1"
+=======
+"","Home","","3","0","65","0","3"
+"","Navigation Menu","","1","4","22","0","4"
+"","Navigation","","1","0","3","0","1"
+"","Upload Tests","","0","0","2","0","2"
+"","Blog","","0","0","2","0","1"
+"","automationbro-webpage","","0","0","0","0","1"
+"","Logo Verification","","0","0","1","0","0"
+"","Automationbro-Webpage","","0","0","0","0","1"
+"","IFrame","","0","0","0","0","2"
+"","Contact","","2","0","0","0","0"
+>>>>>>> 1dde78160133d26aad8299243031998ce3a2d777

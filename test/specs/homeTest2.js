@@ -172,20 +172,31 @@ describe('Navigation Menu', () => {
     // Handling Alert with JS & WebdriverIO
     it('Alert Message with double click in Popup', async() => {
         await browser.url("https://only-testing-blog.blogspot.com/2014/09/selectable.html");
+        // await browser.url("http://omayo.blogspot.com/");
         // await browser.url("https://the-internet.herokuapp.com/javascript_alerts");
         // await $("button").doubleClick()
-        const buttonElement = await $('//button[@ondblclick="myFunction()"]');
+        // const buttonElement = await $("button[ondblclick='myFunction()']");
         // const buttonElement = await $('//button[@onclick="jsAlert()"]');
         // await buttonElement.moveTo()
-        
+
+        const buttonElement = await $("button");
+        // const buttonElement = await $("//button[contains(text(),'Double click Here')]");
+        // await buttonElement.scrollIntoView()
+        // await buttonElement.doDoubleClick()
         await buttonElement.doubleClick()
+        // await buttonElement.click().click()
+
+        // setTimeout(function(){},3000);
+        
+        
+        
         // await buttonElement.click()
         // eslint-disable-next-line wdio/no-pause
-        await browser.pause(1000)
+        // await browser.pause(3000)
         // wait for 3 secs
         // await new Promise(resolve => setTimeout(resolve, 3000));
         // await browser.execute(async() => await buttonElement.doubleClick());
-        await browser.waitUntil(async() => await browser.isAlertOpen())
+        await browser.waitUntil(() => browser.isAlertOpen())
 
         const alertText = await browser.getAlertText()
         
@@ -239,48 +250,107 @@ describe('Navigation Menu', () => {
         
     });
 
-    it.only('Alert Message with double click in Popup', async() => {
-        browser.url("https://only-testing-blog.blogspot.com/2014/09/selectable.html");
-        // await $("button").doubleClick()
-        const buttonElement = await $('button[ondblclick="myFunction()"]');
-        await buttonElement.doubleClick()
-        // eslint-disable-next-line wdio/no-pause
-        await browser.pause(3000);
-        console.log(await browser.isAlertOpen())
-        await expect(await browser.isAlertOpen()).to.be.true
-        console.log(await browser.getAlertText())
-        await expect(await browser.getAlertText()).toEqual("You double clicked me.. Thank You..")
-        await browser.acceptAlert()
+    it('Web Tables Sort Validation Smoke', async() => {
+        await browser.url ("https://rahulshettyacademy.com/seleniumPractise/#/offers")
         // eslint-disable-next-line wdio/no-pause
         await browser.pause(3000)
-        
-        // const isAlertOpen = browser.waitUntil.isAlert();
-        // expect(buttonElement).toBeDisplayed();
-        // // await browser.pause(1000);
-        // const alertText = browser.getAlertText();
-        // console.log("Alert Text: ", alertText);
-        // expect(alertText).toEqual("You double clicked me.. Thank You..")
-        // browser.pause(3000);
-        // browser.acceptAlert();
- 
- 
-        // const alertMesg = await browser.isAlertOpen()
-        // console.log(alertMesg)
-        // expect(alertMesg).to.be.true 
-        // const alertTextMsg = await browser.getAlertText()
-        // console.log("Alert Text: ", alertTextMsg)
-        // await browser.pause(3000)
-        // await browser.acceptAlert()
-        // await browser.isAlertOpen()
-        // await browser.pause(3000)
-        // (await browser.isAlertOpen())
-        // await browser.pause(3000)
-        // expect(await browser.getAlertText()).toEqual("You double clicked me.. Thank You..")
-        // await browser.pause(3000)
-        // await browser.acceptAlert()
- 
+        await $("tr th:nth-child(1)").click()
+        // Retrieve list of veggie names into array A
+        // Sort the array A -> Array B
+        // Compare Array A & B // Fail
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        const veggiesLocators = await $$("tr td:nth-child(1)")
+        const OriginalveggiesNames = await veggiesLocators.map(async veggie => await veggie.getText())
+        console.log(OriginalveggiesNames)
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        const veggies = OriginalveggiesNames.slice()
+        // Array are pass by reference
+        const sortedVeggies = veggies.sort()
+        console.log(sortedVeggies)
+        await expect(OriginalveggiesNames).toEqual(sortedVeggies)
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+
+
+
         
     });
+    // Web Tables Filter
+    it('Web Tables Filter Validation', async() => {
+        await browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers")
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        await $("input[type='search']").setValue("tomato")
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        const veggieLocator = await $$("tr td:nth-child(1)")
+        await expect(veggieLocator).toBeElementsArrayOfSize({eq:1})
+        console.log (await veggieLocator[0].getText())
+        await expect(veggieLocator[0]).toHaveTextContaining("Tomato")
+
+    });
+    // End to End Functional Testing
+    it.only('End to End Test', async() => {
+        const products = ["iphone X", "Blackberry"]
+        await browser.url("https://rahulshettyacademy.com/loginpagePractise/")
+        await browser.maximizeWindow()
+        await $("input[name='username']").setValue("rahulshettyacademy")
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        const password = $("//input[@type='password']")
+        await password.setValue("learning")
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        await $("#signInBtn").click()
+        const link = await $("*=Checkout")
+        await link.waitForExist()
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        const cards = await $$("div[class='card h-100']")
+        for(let i =0; i<await cards.length; i++)
+        {            
+            const card = await cards[i].$("div h4 a")
+            // console.log(await card.getText())
+            if (products.includes(await card.getText()))
+            {
+                await cards[i].$(".card-footer button").click() 
+                // eslint-disable-next-line wdio/no-pause
+                await browser.pause(3000)          
+            }
+        }
+        await link.click()
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        const productPrices = await $$("//tr/td[4]/strong")
+        // String to Integer
+        // .split will separate the currency icon & numbers - $. 130000 
+        // and save before $. at [0] index and after $. at [1] index
+        // .trim will clear any spaces at front & back
+        const sumOfProducts = (await Promise.all (await productPrices.map(async (productPrice)=> parseInt((await productPrice.getText()).split(".")[1].trim())))).reduce((acc,price)=>acc+price,0) 
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        console.log(sumOfProducts)
+        const totalValue = await $("h3 strong").getText()
+        const totalIntValue = parseInt(totalValue.split(".")[1].trim())
+        await expect(sumOfProducts).toEqual(totalIntValue)
+        await $(".btn-success").click() // Click on Checkout Button
+        await $("#country").setValue("ind") // Search for Country name - India
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        await $(".lds-ellipsis").waitForExist({reverse:true}) // Wait until search result show India
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        await $("=India").click() // Click Country name - India
+        await $("input[type='submit']").click()
+        
+        // eslint-disable-next-line wdio/no-pause
+        await browser.pause(3000)
+        await expect($(".alert-success")).toHaveTextContaining("Success")
+        
+    });
+
 });
 
 

@@ -47,6 +47,9 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
         // './test/specs/**/homeTest2.js'
+        // './test/specs/**/home.js',
+        // './test/specs/**/blog.js',
+        // './test/specs/**/contact.js',
     ],
     // Define Suites to run multiple tests
     suites: {
@@ -80,7 +83,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 3,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -118,6 +121,11 @@ exports.config = {
         // capabilities for local browser web tests
         browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
         browserVersion: '116.0.5845.96'
+        // 'goog:chromeOptions': {
+        //     binary: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', // Path to chrome.exe
+        //     args: [], // Optional command line arguments
+        //   },
+        
         // acceptInsecureCerts: true,
         // port: 5556
     },
@@ -213,6 +221,41 @@ exports.config = {
             },
         ]
     ], // By activating this will run chrome driver only
+
+     // ===================================================================
+    // Chrome.exe Services Configuration - Modified by Tanvir
+    // // ===================================================================
+    // services: ['local', 
+    //     [
+    //         'image-comparison',
+    //         // The options
+    //         {
+    //             // Some options, see the docs for more
+    //             baselineFolder: join(process.cwd(), './baseLineImages'),
+    //             formatImageName: '{tag}-{logName}', // -{width}x{height}',
+    //             screenshotPath: join(process.cwd(), './actualImages/'),
+    //             savePerInstance: true,
+    //             autoSaveBaseline: true,
+    //             blockOutStatusBar: true,
+    //             blockOutToolBar: true,
+    //             // NOTE: When you are testing a hybrid app please use this setting
+    //             // isHybridApp: true,
+    //             // Options for the tabbing image
+    //             // tabbableOptions: {
+    //             //     circle: {
+    //             //         size: 18,
+    //             //         fontSize: 18,
+    //             //         // ...
+    //             //     },
+    //             //     line: {
+    //             //         color: '#ff221a', // hex-code or for example words like `red|black|green`
+    //             //         width: 3,
+    //             //     },
+    //             // },
+    //             // ... more options
+    //         },
+    //     ]
+    // ], // By activating this will run chrome driver only
     
 
     // ===================================================================

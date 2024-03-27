@@ -1,0 +1,3 @@
+{
+  "text": "C:\\Users\\Hp\\AppData\\Local\\Temp\\scoped_dir28264_831966293\\upload28264_563485377\\logotitle.png"
+}

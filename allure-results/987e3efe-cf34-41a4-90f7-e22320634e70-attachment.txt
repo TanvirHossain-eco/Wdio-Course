@@ -1,0 +1,42 @@
+{
+  "id": {
+    "sessionId": "4a5b38d9b87a6f3f09efa7d35792d6ce",
+    "elementId": "44BD4764E4D48D33D113766DD65AC6B1_element_27",
+    "element-6066-11e4-a52e-4f735466cecf": "44BD4764E4D48D33D113766DD65AC6B1_element_27",
+    "selector": "#advanced_iframe",
+    "parent": {
+      "sessionId": "4a5b38d9b87a6f3f09efa7d35792d6ce",
+      "capabilities": {
+        "acceptInsecureCerts": false,
+        "browserName": "chrome",
+        "browserVersion": "116.0.5845.111",
+        "chrome": {
+          "chromedriverVersion": "115.0.5790.170 (cc0d30c2ca5577520c8646671513241faa0bc105-refs/branch-heads/5790@{#1923})",
+          "userDataDir": "C:\\Users\\Hp\\AppData\\Local\\Temp\\scoped_dir28264_1263132807"
+        },
+        "goog:chromeOptions": {
+          "debuggerAddress": "localhost:64833"
+        },
+        "networkConnectionEnabled": false,
+        "pageLoadStrategy": "normal",
+        "platformName": "windows",
+        "proxy": {},
+        "setWindowRect": true,
+        "strictFileInteractability": false,
+        "timeouts": {
+          "implicit": 0,
+          "pageLoad": 300000,
+          "script": 30000
+        },
+        "unhandledPromptBehavior": "dismiss and notify",
+        "webauthn:extension:credBlob": true,
+        "webauthn:extension:largeBlob": true,
+        "webauthn:extension:minPinLength": true,
+        "webauthn:extension:prf": true,
+        "webauthn:virtualAuthenticators": true
+      }
+    },
+    "isReactElement": false,
+    "isShadowElement": false
+  }
+}

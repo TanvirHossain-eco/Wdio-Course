@@ -1,5 +1,0 @@
-{
-  "error": "no such element",
-  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"div.totalAmount\"}\n  (Session info: chrome=115.0.5790.171)",
-  "stacktrace": "Backtrace:\n\tGetHandleVerifier [0x002AA813+48355]\n\t(No symbol) [0x0023C4B1]\n\t(No symbol) [0x00145358]\n\t(No symbol) [0x001709A5]\n\t(No symbol) [0x00170B3B]\n\t(No symbol) [0x0019E232]\n\t(No symbol) [0x0018A784]\n\t(No symbol) [0x0019C922]\n\t(No symbol) [0x0018A536]\n\t(No symbol) [0x001682DC]\n\t(No symbol) [0x001693DD]\n\tGetHandleVerifier [0x0050AABD+2539405]\n\tGetHandleVerifier [0x0054A78F+2800735]\n\tGetHandleVerifier [0x0054456C+2775612]\n\tGetHandleVerifier [0x003351E0+616112]\n\t(No symbol) [0x00245F8C]\n\t(No symbol) [0x00242328]\n\t(No symbol) [0x0024240B]\n\t(No symbol) [0x00234FF7]\n\tBaseThreadInitThunk [0x76877D59+25]\n\tRtlInitializeExceptionChain [0x7746B79B+107]\n\tRtlClearBits [0x7746B71F+191]\n\t(No symbol) [0x00000000]\n"
-}

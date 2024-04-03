@@ -1,4 +1,0 @@
-{
-  "script": "return (() => {\n      window.alert = function () {\n        // Do nothing to prevent the alert from being closed\n        Object.defineProperty(window, 'alert', {\n          configurable: true,\n          value: function (message) {\n            this._alertMessage = message;\n          }\n        });\n      };\n    }).apply(null, arguments)",
-  "args": []
-}

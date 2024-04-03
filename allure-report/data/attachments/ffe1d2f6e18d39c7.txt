@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//button[contains(text(),'Double-Click Me To See Alert')]"
-}

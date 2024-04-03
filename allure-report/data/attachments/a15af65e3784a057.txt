@@ -1,5 +1,0 @@
-{
-  "error": "no such element",
-  "message": "no such element: Unable to locate element: {\"method\":\"partial link text\",\"selector\":\"Checkout\"}\n  (Session info: chrome=116.0.5845.111)",
-  "stacktrace": "Backtrace:\n\tGetHandleVerifier [0x00007FF693454A62+57106]\n\t(No symbol) [0x00007FF6933CCF52]\n\t(No symbol) [0x00007FF69329E2CB]\n\t(No symbol) [0x00007FF6932D786E]\n\t(No symbol) [0x00007FF6932D795C]\n\t(No symbol) [0x00007FF693310477]\n\t(No symbol) [0x00007FF6932F69FF]\n\t(No symbol) [0x00007FF69330E522]\n\t(No symbol) [0x00007FF6932F6793]\n\t(No symbol) [0x00007FF6932CCE81]\n\t(No symbol) [0x00007FF6932CE064]\n\tGetHandleVerifier [0x00007FF693704222+2873042]\n\tGetHandleVerifier [0x00007FF693756590+3209792]\n\tGetHandleVerifier [0x00007FF69374F3AF+3180639]\n\tGetHandleVerifier [0x00007FF6934E5F25+652245]\n\t(No symbol) [0x00007FF6933D8618]\n\t(No symbol) [0x00007FF6933D47C4]\n\t(No symbol) [0x00007FF6933D48BC]\n\t(No symbol) [0x00007FF6933C4C33]\n\tBaseThreadInitThunk [0x00007FFDD27E26AD+29]\n\tRtlUserThreadStart [0x00007FFDD338AA68+40]\n"
-}

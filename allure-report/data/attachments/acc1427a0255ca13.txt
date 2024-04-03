@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "tr th:nth-child(1)"
-}

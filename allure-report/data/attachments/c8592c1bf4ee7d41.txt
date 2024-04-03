@@ -1,5 +1,0 @@
-{
-  "error": "no such element",
-  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"button[ondblclick=\"myFunction()\"]\"}\n  (Session info: chrome=116.0.5845.97)",
-  "stacktrace": "Backtrace:\n\tGetHandleVerifier [0x00007FF6A89B4A62+57106]\n\t(No symbol) [0x00007FF6A892CF52]\n\t(No symbol) [0x00007FF6A87FE2CB]\n\t(No symbol) [0x00007FF6A883786E]\n\t(No symbol) [0x00007FF6A883795C]\n\t(No symbol) [0x00007FF6A8870477]\n\t(No symbol) [0x00007FF6A88569FF]\n\t(No symbol) [0x00007FF6A886E522]\n\t(No symbol) [0x00007FF6A8856793]\n\t(No symbol) [0x00007FF6A882CE81]\n\t(No symbol) [0x00007FF6A882E064]\n\tGetHandleVerifier [0x00007FF6A8C64222+2873042]\n\tGetHandleVerifier [0x00007FF6A8CB6590+3209792]\n\tGetHandleVerifier [0x00007FF6A8CAF3AF+3180639]\n\tGetHandleVerifier [0x00007FF6A8A45F25+652245]\n\t(No symbol) [0x00007FF6A8938618]\n\t(No symbol) [0x00007FF6A89347C4]\n\t(No symbol) [0x00007FF6A89348BC]\n\t(No symbol) [0x00007FF6A8924C33]\n\tBaseThreadInitThunk [0x00007FFDD27E26AD+29]\n\tRtlUserThreadStart [0x00007FFDD338AA68+40]\n"
-}

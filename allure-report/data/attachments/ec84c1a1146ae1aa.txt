@@ -1,4 +1,0 @@
-{
-  "script": "document.querySelector('#upfile_1').className = ''",
-  "args": []
-}

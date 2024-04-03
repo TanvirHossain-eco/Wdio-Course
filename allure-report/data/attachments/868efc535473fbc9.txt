@@ -1,5 +1,0 @@
-{
-  "error": "no such element",
-  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"span\"}\n  (Session info: chrome=115.0.5790.171)",
-  "stacktrace": "Backtrace:\n\tGetHandleVerifier [0x006EA813+48355]\n\t(No symbol) [0x0067C4B1]\n\t(No symbol) [0x00585358]\n\t(No symbol) [0x005B09A5]\n\t(No symbol) [0x005B0B3B]\n\t(No symbol) [0x005A9AE1]\n\t(No symbol) [0x005CA784]\n\t(No symbol) [0x005A9A36]\n\t(No symbol) [0x005CAA94]\n\t(No symbol) [0x005DC922]\n\t(No symbol) [0x005CA536]\n\t(No symbol) [0x005A82DC]\n\t(No symbol) [0x005A93DD]\n\tGetHandleVerifier [0x0094AABD+2539405]\n\tGetHandleVerifier [0x0098A78F+2800735]\n\tGetHandleVerifier [0x0098456C+2775612]\n\tGetHandleVerifier [0x007751E0+616112]\n\t(No symbol) [0x00685F8C]\n\t(No symbol) [0x00682328]\n\t(No symbol) [0x0068240B]\n\t(No symbol) [0x00674FF7]\n\tBaseThreadInitThunk [0x765F7D59+25]\n\tRtlInitializeExceptionChain [0x779DB79B+107]\n\tRtlClearBits [0x779DB71F+191]\n"
-}
